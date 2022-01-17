@@ -33,7 +33,7 @@ The features can vary a little bit, but we can consider that is possible to appl
 
 # Default block screen
 
-![Screenshot_1641575605](https://user-images.githubusercontent.com/7460007/148581075-c366ad71-04f5-4e27-8b44-1216d55e623b.png)
+<img src="https://user-images.githubusercontent.com/7460007/149816331-01ebcf2d-1f4f-4561-bb09-7c1a6fcca2f4.gif" width=40% height=40%) >
 
 
 ## Get started
@@ -64,7 +64,6 @@ You can now use the 'Authentication' class to show and manipulate the block scre
 
 # Example
 
-[Find here](https://github.com/mobiplus-opensource/mobiplus-version-blocker-flutter/tree/master/sample)
 
 # Colaborating
 
