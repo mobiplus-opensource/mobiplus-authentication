@@ -1,19 +1,18 @@
-# Welcome to Mobiplus Version Blocker repo!
+# Welcome to Mobiplus Authentication repo!
 
 Feel free to contact us to provide your feedback about anything.
 We are always responsing the questions in discussion tab.
 Let's talk and learn together.
 
-Version Blocker intends to solve the following problems:
+Mobiplus Authentication intends to solve the following problems:
 
-- To suggest users to update old versions to new ones available.
-- For the developer, offering a simple and faster way of implement and personalize the message of version blocked
+- For users, offer the possibility to access their applications using their favorite providers, such as google and apple id.
+- For the developer, simplify the creation of all the necessary structure for the authentication part.
 
-## For who is the Version Blocker? :thinking:
+## For who is the Authentication? :thinking:
 
 Developers that don't likes to write duplicated solutions and that wants to invest your time to impacts your app products.
-
-Product's people that needs solutions to manage app versions intelligently.
+To Know a user's identity and to securely save user data in the cloud and provide the same personalized experience
 
 ## Motivation :robot:
 
@@ -25,8 +24,9 @@ The features can vary a little bit, but we can consider that is possible to appl
 
 # Features :compass:
 
-- Encapsulated blocked version screen display logic
-- Integration with realtime database to determine the blocked versions
+- Encapsulated Authentication screen display logic
+- Create account
+- Login social with Google and Apple ID
 - Customizable text style in title, body and button
 - Customizable color button and background color
 - Customizable image
@@ -38,52 +38,28 @@ The features can vary a little bit, but we can consider that is possible to appl
 
 ## Get started
 
-```pubspec.yaml
-dependencies:
-  version_blocker_flutter: git@github.com:mobiplus-opensource/mobiplus-version-blocker-flutter
-  ref: 2ca2ed2 --last release
-```
-> this approach was chosen as a temporary workaround as it quickly delivers the delivery with the latest lib version.
-
 ## Super simple to use
 
 ```dart
-import 'package:version_blocker_flutter/version_blocker_flutter.dart';
+import 'package:
 ```
 
-Initialize Version Blocker
+Initialize Authentication
 
 ```dart
-final blockApp = BlockApp();
 ```
 
-You can now use the 'BlockApp()' class to show and manipulate the block screen properties
+You can now use the 'Authentication' class to show and manipulate the block screen properties
 
 ```dart
-void initBlockVersion(BuildContext context) async {
-    final blockApp = BlockApp();
-    blockApp.titleText(titleText: 'teste de título', 
-                      titleStyle: TextStyle(backgroundColor: Colors.amber));                                                               
-    blockApp.button(
-        buttonStyle: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all<Color>(Colors.blue)));
-    await blockApp.initVersionBlocker(context);
-  }
 ```
 # What can be customized?
 
 ```
-> background color(Colors? backgroundColor)
-> titleText({TextStyle? titleStyle, String? titleText})
-> image({Image? image})
-> middleText({String? middleText, TextStyle? middleTextStyle})
-> bottomText({String? bottomText, TextStyle? bottomTextStyle})
-> button({String? buttonText, TextStyle? buttonTextStyle, ButtonStyle? buttonStyle})
 ```
 
 ## Good pratices
 
-- We recommend the 110 character limit to keep the layout cohesive in the text fields
 
 
 # Example
