@@ -38,7 +38,7 @@ The features can vary a little bit, but we can consider that is possible to appl
 
 # Registration Screen
 
-<img src="https://user-images.githubusercontent.com/7460007/149958929-7b778a7d-cbfc-45fa-b410-c9d82c174db9.png" width=30% height=30%) >
+<img src="https://user-images.githubusercontent.com/7460007/149991733-321f800e-8c63-46d2-9edf-220402ff73c2.png" width=30% height=30%) >
 
 ## Get started
 
