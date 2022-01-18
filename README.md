@@ -27,14 +27,18 @@ The features can vary a little bit, but we can consider that is possible to appl
 - Encapsulated Authentication screen display logic
 - Create account
 - Login social with Google and Apple ID
+- Login with email and password
 - Customizable text style in title, body and button
 - Customizable color button and background color
 - Customizable image
 
-# Default block screen
+# First Authentication Screen
 
-<img src="https://user-images.githubusercontent.com/7460007/149816331-01ebcf2d-1f4f-4561-bb09-7c1a6fcca2f4.gif" width=40% height=40%) >
+<img src="https://user-images.githubusercontent.com/7460007/149958929-7b778a7d-cbfc-45fa-b410-c9d82c174db9.png" width=30% height=30%) >
 
+# Registration Screen
+
+<img src="https://user-images.githubusercontent.com/7460007/149958929-7b778a7d-cbfc-45fa-b410-c9d82c174db9.png" width=30% height=30%) >
 
 ## Get started
 
