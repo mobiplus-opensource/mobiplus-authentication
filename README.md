@@ -25,9 +25,7 @@ The features can vary a little bit, but we can consider that is possible to appl
 # Features :compass:
 
 - Encapsulated Authentication screen display logic
-- Create account
 - Login social with Google and Apple ID
-- Login with email and password
 - Customizable text style in title, body and button
 - Customizable color button and background color
 - Customizable image
