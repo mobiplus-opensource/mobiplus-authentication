@@ -18,37 +18,52 @@ class LoginScreenStates extends State<LoginScreen> {
           return Column(
             children: [
               Flexible(
+                flex: 2,
                 child: Container(
-                  color: Colors.white,
+                    padding: EdgeInsets.only(top: 20),
+                    alignment: Alignment.center,
+                    color: Colors.white,
                     child: Expanded(
                       child: Image(
-                        image: AssetImage('lib/assets/images/mobiplus_logo.png'),
+                        image:
+                            AssetImage('lib/assets/images/mobiplus_logo.png'),
                       ),
                     )),
               ),
-              Column(
-                children: [
-                  Container(
-                    padding: EdgeInsets.only(bottom: 10),
-                    child: ElevatedButtonTheme(
-                      data: ElevatedButtonThemeData(style: ButtonStyle()),
-                      child: ElevatedButton(
-                        onPressed: () async {},
-                        child: Text('Continuar com Google'),
+              Flexible(
+                flex: 2,
+                child: Column(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.only(bottom: 10),
+                      child: ElevatedButtonTheme(
+                        data: ElevatedButtonThemeData(
+                            style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStateProperty.all<Color>(
+                                        Color(0xffFF5D00)))),
+                        child: ElevatedButton(
+                          onPressed: () async {},
+                          child: Text('Continuar com Google'),
+                        ),
                       ),
                     ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(bottom: 10),
-                    child: ElevatedButtonTheme(
-                      data: ElevatedButtonThemeData(style: ButtonStyle()),
-                      child: ElevatedButton(
-                        onPressed: () async {},
-                        child: Text('Continuar com Apple'),
+                    Container(
+                      padding: EdgeInsets.only(bottom: 10),
+                      child: ElevatedButtonTheme(
+                        data: ElevatedButtonThemeData(
+                            style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStateProperty.all<Color>(
+                                        Color(0xff808080)))),
+                        child: ElevatedButton(
+                          onPressed: () async {},
+                          child: Text('Continuar com Apple'),
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ],
           );
