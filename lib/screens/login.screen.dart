@@ -35,10 +35,16 @@ class LoginScreenStates extends State<LoginScreen> {
                 child: Column(
                   children: [
                     Container(
+                      width: constraints.maxWidth - 120,
                       padding: EdgeInsets.only(bottom: 10),
                       child: ElevatedButtonTheme(
                         data: ElevatedButtonThemeData(
                             style: ButtonStyle(
+                                shape: MaterialStateProperty.all<
+                                        RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(30.0))),
                                 backgroundColor:
                                     MaterialStateProperty.all<Color>(
                                         Color(0xffFF5D00)))),
@@ -49,10 +55,16 @@ class LoginScreenStates extends State<LoginScreen> {
                       ),
                     ),
                     Container(
+                      width: constraints.maxWidth - 120,
                       padding: EdgeInsets.only(bottom: 10),
                       child: ElevatedButtonTheme(
                         data: ElevatedButtonThemeData(
                             style: ButtonStyle(
+                                shape: MaterialStateProperty.all<
+                                        RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(30.0))),
                                 backgroundColor:
                                     MaterialStateProperty.all<Color>(
                                         Color(0xff808080)))),
