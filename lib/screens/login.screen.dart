@@ -1,7 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mobiplus_authentication/provider/google.sign.in.provider.dart';
+import 'package:provider/provider.dart';
 
 class LoginScreen extends StatefulWidget {
+  const LoginScreen({Key? key}) : super(key: key);
+
   @override
   State<LoginScreen> createState() {
     return LoginScreenStates();
@@ -16,16 +19,16 @@ class LoginScreenStates extends State<LoginScreen> {
         backgroundColor: Colors.black,
         body: LayoutBuilder(builder: (_, constraints) {
           return Container(
-            margin: EdgeInsets.only(top: 50),
+            margin: const EdgeInsets.only(top: 50),
             child: Column(
               children: [
                 Flexible(
                   flex: 2,
                   child: Container(
-                      padding: EdgeInsets.only(top: 20),
+                      padding: const EdgeInsets.only(top: 20),
                       alignment: Alignment.center,
-                      child: Expanded(
-                        child: Image(
+                      child: const Expanded(
+                        child: const Image(
                           image:
                               AssetImage('lib/assets/images/mobiplus_logo.png'),
                         ),
@@ -37,7 +40,7 @@ class LoginScreenStates extends State<LoginScreen> {
                     children: [
                       Container(
                         width: constraints.maxWidth - 120,
-                        padding: EdgeInsets.only(bottom: 10),
+                        padding: const EdgeInsets.only(bottom: 10),
                         child: ElevatedButtonTheme(
                           data: ElevatedButtonThemeData(
                               style: ButtonStyle(
@@ -48,16 +51,21 @@ class LoginScreenStates extends State<LoginScreen> {
                                               BorderRadius.circular(30.0))),
                                   backgroundColor:
                                       MaterialStateProperty.all<Color>(
-                                          Color(0xffFF5D00)))),
+                                          const Color(0xffFF5D00)))),
                           child: ElevatedButton(
-                            onPressed: () async {},
-                            child: Text('Continuar com Google'),
+                            onPressed: () async {
+                              final provider =
+                                  Provider.of<GoogleSignInProvider>(context,
+                                      listen: false);
+                                      provider.googleLogin(context);
+                            },
+                            child: const Text('Continuar com Google'),
                           ),
                         ),
                       ),
                       Container(
                         width: constraints.maxWidth - 120,
-                        padding: EdgeInsets.only(bottom: 10),
+                        padding: const EdgeInsets.only(bottom: 10),
                         child: ElevatedButtonTheme(
                           data: ElevatedButtonThemeData(
                               style: ButtonStyle(
@@ -68,10 +76,10 @@ class LoginScreenStates extends State<LoginScreen> {
                                               BorderRadius.circular(30.0))),
                                   backgroundColor:
                                       MaterialStateProperty.all<Color>(
-                                          Color(0xff808080)))),
+                                          const Color(0xff808080)))),
                           child: ElevatedButton(
                             onPressed: () async {},
-                            child: Text('Continuar com Apple'),
+                            child: const Text('Continuar com Apple'),
                           ),
                         ),
                       ),

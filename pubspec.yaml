@@ -15,8 +15,9 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   firebase_auth: ^3.3.5
-  google_sign_in: '^4.5.1'
+  google_sign_in: 5.0.7
   provider: ^5.0.0
+  motion_toast: ^2.1.0
 
 dev_dependencies:
   flutter_test:
