@@ -26,8 +26,8 @@ The features can vary a little bit, but we can consider that is possible to appl
 
 - Encapsulated Authentication screen display logic
 - Login social with Google and Apple ID
-- Customizable text style in title, body and button
 - Customizable color button and background color
+- Customizable text button
 - Customizable image
 
 # First Authentication Screen
