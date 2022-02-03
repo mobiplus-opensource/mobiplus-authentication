@@ -63,26 +63,7 @@ class LoginScreenStates extends State<LoginScreen> {
                           ),
                         ),
                       ),
-                      Container(
-                        width: constraints.maxWidth - 120,
-                        padding: const EdgeInsets.only(bottom: 10),
-                        child: ElevatedButtonTheme(
-                          data: ElevatedButtonThemeData(
-                              style: ButtonStyle(
-                                  shape: MaterialStateProperty.all<
-                                          RoundedRectangleBorder>(
-                                      RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(30.0))),
-                                  backgroundColor:
-                                      MaterialStateProperty.all<Color>(
-                                          const Color(0xff808080)))),
-                          child: ElevatedButton(
-                            onPressed: () async {},
-                            child: const Text('Continuar com Apple'),
-                          ),
-                        ),
-                      ),
+
                     ],
                   ),
                 ),
