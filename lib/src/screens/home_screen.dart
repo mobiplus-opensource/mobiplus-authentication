@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mobiplus_authentication/provider/google.sign.in.provider.dart';
-import 'package:mobiplus_authentication/screens/login.screen.dart';
+import 'package:mobiplus_authentication/src/provider/google.sign.in.provider.dart';
+import 'package:mobiplus_authentication/src/screens/login_screen.dart';
+
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {

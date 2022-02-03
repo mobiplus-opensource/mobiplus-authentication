@@ -11,11 +11,11 @@ class HomeScreen extends StatelessWidget {
           child: ElevatedButtonTheme(
             data: ElevatedButtonThemeData(
                 style: ButtonStyle(
-                    minimumSize: MaterialStateProperty.all<Size>(Size(320, 50)),
+                    minimumSize: MaterialStateProperty.all<Size>(const Size(320, 50)),
                     backgroundColor:
                         MaterialStateProperty.all<Color>(Colors.red),
                     textStyle: MaterialStateProperty.all<TextStyle>(
-                        TextStyle(fontSize: 20)))),
+                        const TextStyle(fontSize: 20)))),
             child: ElevatedButton(
               onPressed: () async {
                 initAuth(context);
