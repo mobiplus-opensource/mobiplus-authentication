@@ -18,13 +18,8 @@ class HomeScreen extends StatelessWidget {
                         const TextStyle(fontSize: 20)))),
             child: ElevatedButton(
               onPressed: () async {
-                initAuth(context);
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(builder: (context) => BlockScreen()),
-                // );
-              },
-              child: Text('Me clique'),
+                initAuthentication(context);              },
+              child: const Text('Navegar para tela de login'),
             ),
           ),
         );
@@ -32,10 +27,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  void initAuth(BuildContext context) async {
-    // final blockApp = BlockApp();
-    // blockApp.image( image: Image(
-    // image: AssetImage('assets/images/10772206.jpg')));                                                       
-    // await blockApp.initVersionBlocker(context);
+  void initAuthentication(BuildContext context) async {
+    final auth = Authentication();
   }
 }

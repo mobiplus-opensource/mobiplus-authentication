@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobiplus_authentication/provider/google.sign.in.provider.dart';
+import 'package:mobiplus_authentication_flutter/src/provider/google.sign.in.provider.dart';
 import 'package:provider/provider.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -28,7 +28,7 @@ class LoginScreenStates extends State<LoginScreen> {
                       padding: const EdgeInsets.only(top: 20),
                       alignment: Alignment.center,
                       child: const Expanded(
-                        child: const Image(
+                        child: Image(
                           image:
                               AssetImage('lib/assets/images/mobiplus_logo.png'),
                         ),

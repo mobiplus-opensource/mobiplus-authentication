@@ -1,9 +1,9 @@
 name: mobiplus_authentication_example
-description: A new Flutter project.
+description: Demonstrates how to use the mobiplus_authentication_example plugin.
 
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: 'none'
 
-version: 1.0.0+1
+version: 0.4.0+1
 
 environment:
   sdk: ">=2.15.1 <3.0.0"
@@ -14,6 +14,8 @@ dependencies:
   firebase_database: ^9.0.2
   flutter:
     sdk: flutter
+  mobiplus_authentication_flutter:
+    path: ../
 
   cupertino_icons: ^1.0.2
 
@@ -24,5 +26,4 @@ dev_dependencies:
   flutter_lints: ^1.0.0
 
 flutter:
-
   uses-material-design: true
