@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobiplus_authentication_flutter/mobiplus_authentication.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -29,5 +30,6 @@ class HomeScreen extends StatelessWidget {
 
   void initAuthentication(BuildContext context) async {
     final auth = Authentication();
+     auth.initAuthentication(context);
   }
 }
