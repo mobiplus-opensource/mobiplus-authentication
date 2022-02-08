@@ -27,12 +27,12 @@ class LoginScreenStates extends State<LoginScreen> {
                   child: Container(
                       padding: const EdgeInsets.only(top: 20),
                       alignment: Alignment.center,
-                      child: const Expanded(
-                        child: Image(
-                          image:
-                              AssetImage('lib/assets/images/mobiplus_logo.png'),
-                        ),
-                      )),
+                      // child: const Image(
+                      //   image:
+                      //       AssetImage('src/assets/images/update_icon.jpg'),
+                      //       fit: BoxFit.fill,
+                      // )
+                      ),
                 ),
                 Flexible(
                   flex: 2,
