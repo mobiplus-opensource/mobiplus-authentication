@@ -32,6 +32,7 @@ class HomeScreen extends StatelessWidget {
 
   void initAuthentication(BuildContext context) async {
     final auth = Authentication();
+    auth.image(image: Image(image: AssetImage('assets/images/mobiplus_logo.png')));
     auth.initAuthentication(context);
   }
 }
