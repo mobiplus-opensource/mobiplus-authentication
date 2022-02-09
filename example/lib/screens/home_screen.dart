@@ -12,14 +12,16 @@ class HomeScreen extends StatelessWidget {
           child: ElevatedButtonTheme(
             data: ElevatedButtonThemeData(
                 style: ButtonStyle(
-                    minimumSize: MaterialStateProperty.all<Size>(const Size(320, 50)),
+                    minimumSize:
+                        MaterialStateProperty.all<Size>(const Size(320, 50)),
                     backgroundColor:
                         MaterialStateProperty.all<Color>(Colors.red),
                     textStyle: MaterialStateProperty.all<TextStyle>(
                         const TextStyle(fontSize: 20)))),
             child: ElevatedButton(
               onPressed: () async {
-                initAuthentication(context);              },
+                initAuthentication(context);
+              },
               child: const Text('Navegar para tela de login'),
             ),
           ),
@@ -30,6 +32,6 @@ class HomeScreen extends StatelessWidget {
 
   void initAuthentication(BuildContext context) async {
     final auth = Authentication();
-     auth.initAuthentication(context);
+    auth.initAuthentication(context);
   }
 }
