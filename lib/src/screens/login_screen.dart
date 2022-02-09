@@ -3,18 +3,18 @@ import 'package:mobiplus_authentication_flutter/src/provider/google.sign.in.prov
 import 'package:provider/provider.dart';
 
 class LoginScreen extends StatefulWidget {
-  String buttonText;
-  TextStyle buttonTextStyle;
-  ButtonStyle buttonStyle;
+  final Image image;
+  final String buttonText;
+  final TextStyle buttonTextStyle;
+  final ButtonStyle buttonStyle;
 
-  LoginScreen(
-    this.buttonText, 
-    this.buttonTextStyle, 
-    this.buttonStyle) : super();
+  const LoginScreen(
+      this.image, this.buttonText, this.buttonTextStyle, this.buttonStyle,
+      {Key? key})
+      : super(key: key);
 
   @override
   State<LoginScreen> createState() => LoginScreenStates();
-  
 }
 
 class LoginScreenStates extends State<LoginScreen> {
@@ -33,12 +33,7 @@ class LoginScreenStates extends State<LoginScreen> {
                   child: Container(
                       padding: const EdgeInsets.only(top: 20),
                       alignment: Alignment.center,
-                      // child: const Image(
-                      //   image:
-                      //       AssetImage('src/assets/images/update_icon.jpg'),
-                      //       fit: BoxFit.fill,
-                      // )
-                      ),
+                      child: widget.image),
                 ),
                 Flexible(
                   flex: 2,
@@ -55,9 +50,12 @@ class LoginScreenStates extends State<LoginScreen> {
                               final provider =
                                   Provider.of<GoogleSignInProvider>(context,
                                       listen: false);
-                                      provider.googleLogin(context);
+                              provider.googleLogin(context);
                             },
-                            child: Text(widget.buttonText, style: widget.buttonTextStyle,),
+                            child: Text(
+                              widget.buttonText,
+                              style: widget.buttonTextStyle,
+                            ),
                           ),
                         ),
                       ),

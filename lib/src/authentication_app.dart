@@ -4,6 +4,9 @@ import 'package:mobiplus_authentication_flutter/src/screens/home_screen.dart';
 class Authentication {
   static late final BuildContext _context;
 
+  late Image _image = Image(
+    image: AssetImage('lib/src/assets/images/mobiplus_logo.png'),
+  );
   late String _buttonText = 'Continuar com Google';
   late TextStyle _buttonTextStyle = const TextStyle(fontSize: 20);
   late ButtonStyle _buttonStyle = ButtonStyle(
@@ -11,6 +14,12 @@ class Authentication {
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0))),
       backgroundColor:
           MaterialStateProperty.all<Color>(const Color(0xffFF5D00)));
+
+  void image({Image? image}) {
+    if (image != null) {
+      _image = image;
+    }
+  }
 
   void button(
       {String? buttonText,
@@ -37,6 +46,9 @@ class Authentication {
 
   _launchAuthenticationScreen() {
     Navigator.push(
-        _context, MaterialPageRoute(builder: (_context) => HomeScreen(_buttonText, _buttonTextStyle, _buttonStyle)));
+        _context,
+        MaterialPageRoute(
+            builder: (_context) =>
+                HomeScreen(_image, _buttonText, _buttonTextStyle, _buttonStyle)));
   }
 }
