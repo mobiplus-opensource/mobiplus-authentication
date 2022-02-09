@@ -32,6 +32,8 @@ class GoogleSignInProvider extends ChangeNotifier {
       print(error.message);
     }
 
+    
+
     String? username = '';
     if (_user?.displayName != null){
       username = _user?.displayName;
