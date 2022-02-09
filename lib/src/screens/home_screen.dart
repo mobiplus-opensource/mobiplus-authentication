@@ -5,13 +5,21 @@ import 'package:mobiplus_authentication_flutter/src/screens/login_screen.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  final String buttonText;
+  final TextStyle buttonTextStyle;
+  final ButtonStyle buttonStyle;
+
+
+  const HomeScreen(
+   this.buttonText,
+   this.buttonTextStyle, 
+   this.buttonStyle) : super();
 
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       child: Builder(builder: (context) {
-        return const LoginScreen();
+        return LoginScreen(buttonText, buttonTextStyle, buttonStyle);
       }),
       create: (BuildContext context) => GoogleSignInProvider(),
     );

@@ -3,12 +3,18 @@ import 'package:mobiplus_authentication_flutter/src/provider/google.sign.in.prov
 import 'package:provider/provider.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  String buttonText;
+  TextStyle buttonTextStyle;
+  ButtonStyle buttonStyle;
+
+  LoginScreen(
+    this.buttonText, 
+    this.buttonTextStyle, 
+    this.buttonStyle) : super();
 
   @override
-  State<LoginScreen> createState() {
-    return LoginScreenStates();
-  }
+  State<LoginScreen> createState() => LoginScreenStates();
+  
 }
 
 class LoginScreenStates extends State<LoginScreen> {
@@ -43,15 +49,7 @@ class LoginScreenStates extends State<LoginScreen> {
                         padding: const EdgeInsets.only(bottom: 10),
                         child: ElevatedButtonTheme(
                           data: ElevatedButtonThemeData(
-                              style: ButtonStyle(
-                                  shape: MaterialStateProperty.all<
-                                          RoundedRectangleBorder>(
-                                      RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(30.0))),
-                                  backgroundColor:
-                                      MaterialStateProperty.all<Color>(
-                                          const Color(0xffFF5D00)))),
+                              style: widget.buttonStyle),
                           child: ElevatedButton(
                             onPressed: () async {
                               final provider =
@@ -59,7 +57,7 @@ class LoginScreenStates extends State<LoginScreen> {
                                       listen: false);
                                       provider.googleLogin(context);
                             },
-                            child: const Text('Continuar com Google'),
+                            child: Text(widget.buttonText, style: widget.buttonTextStyle,),
                           ),
                         ),
                       ),
