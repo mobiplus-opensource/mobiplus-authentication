@@ -1,17 +1,15 @@
 class UserData {
   UserData({
-    required this.fullName,
-    required this.email,
-    required this.userType,
-    required this.authProvider,
-    required this.profileImageUrl,
+    this.fullName,
+    this.email,
+    this.authProvider,
+    this.profileImageUrl,
   });
 
-  final AuthProvider authProvider;
-  final String email;
-  final String fullName;
-  final String profileImageUrl;
-  final String userType;
+  final AuthProvider? authProvider;
+  final String? email;
+  final String? fullName;
+  final String? profileImageUrl;
 }
 
 enum AuthProvider {

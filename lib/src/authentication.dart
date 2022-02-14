@@ -1,8 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:mobiplus_authentication_flutter/src/domain/user/user.data.dart';
+import 'package:mobiplus_authentication_flutter/src/domain/user/user_data_service.dart';
 import 'package:mobiplus_authentication_flutter/src/screens/home_screen.dart';
 
 class Authentication {
   static late final BuildContext _context;
+  static late final UserService _userService;
 
   late Image _image = Image(
     image: AssetImage('lib/src/assets/images/mobiplus_logo.png'),
@@ -38,17 +42,28 @@ class Authentication {
     }
   }
 
-  bool initAuthentication(BuildContext buildContext) {
+  initAuthentication(BuildContext buildContext) async {
     _context = buildContext;
-    _launchAuthenticationScreen();
-    return true;
+    await _launchAuthenticationScreen();
   }
 
-  _launchAuthenticationScreen() {
-    Navigator.push(
+  getUserLoggedinfo() {
+    if (_userService != null) {
+      return _userService.getUserLoggedInfo();
+    } else {
+      return Exception('Undefined user');
+    }
+  }
+
+  signOut() async {
+    await FirebaseAuth.instance.signOut();
+  }
+
+  _launchAuthenticationScreen() async {
+    await Navigator.push(
         _context,
         MaterialPageRoute(
-            builder: (_context) =>
-                HomeScreen(_image, _buttonText, _buttonTextStyle, _buttonStyle)));
+            builder: (_context) => HomeScreen(
+                _image, _buttonText, _buttonTextStyle, _buttonStyle)));
   }
 }

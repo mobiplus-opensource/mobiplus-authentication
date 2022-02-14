@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:mobiplus_authentication_flutter/src/domain/user/user.data.dart';
+import 'package:mobiplus_authentication_flutter/src/domain/user/user_data_service.dart';
 import 'package:motion_toast/motion_toast.dart';
 import 'package:motion_toast/resources/arrays.dart';
 
@@ -28,6 +30,11 @@ class GoogleSignInProvider extends ChangeNotifier {
       );
 
       await FirebaseAuth.instance.signInWithCredential(credential);
+
+      final userService = UserService();
+
+      userService.save(_user, AuthProvider.google);
+
       MotionToast.success(
               title: Text(
                 'Login realizado com sucesso',
@@ -37,15 +44,16 @@ class GoogleSignInProvider extends ChangeNotifier {
               animationType: ANIMATION.fromRight,
               width: 300,
               onClose: () {},
-              description: Text(username))
+              description: Text(_user.email))
           .show(context);
-
 
       if (_user.displayName != null) {
         username = _user.displayName;
       }
 
       notifyListeners();
+
+      Navigator.pop(context);
     } on FirebaseAuthException catch (error) {
       print(error.message);
     }

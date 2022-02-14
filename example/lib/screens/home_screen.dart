@@ -20,7 +20,8 @@ class HomeScreen extends StatelessWidget {
                         const TextStyle(fontSize: 20)))),
             child: ElevatedButton(
               onPressed: () async {
-                initAuthentication(context);
+                await initAuthentication(context);
+                getUserInfo();
               },
               child: const Text('Navegar para tela de login'),
             ),
@@ -30,9 +31,14 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  void initAuthentication(BuildContext context) async {
+  Future<void> initAuthentication(BuildContext context) async {
     final auth = Authentication();
-    auth.image(image: Image(image: AssetImage('assets/images/mobiplus_logo.png')));
-    auth.initAuthentication(context);
+    auth.image(
+        image: const Image(image: AssetImage('assets/images/mobiplus_logo.png')));
+    await auth.initAuthentication(context);
+  }
+
+  void getUserInfo(){
+    final teste = Authentication().getUserLoggedinfo();
   }
 }

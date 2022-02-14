@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:mobiplus_authentication_flutter/src/provider/google.sign.in.provider.dart';
 import 'package:mobiplus_authentication_flutter/src/screens/login_screen.dart';
@@ -9,7 +11,6 @@ class HomeScreen extends StatelessWidget {
   final String buttonText;
   final TextStyle buttonTextStyle;
   final ButtonStyle buttonStyle;
-
 
   const HomeScreen(
    this.image,
