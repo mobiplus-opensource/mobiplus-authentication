@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobiplus_authentication_example/screens/user_logged.dart';
 import 'package:mobiplus_authentication_flutter/mobiplus_authentication.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -21,7 +22,6 @@ class HomeScreen extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () async {
                 await initAuthentication(context);
-                getUserInfo();
               },
               child: const Text('Navegar para tela de login'),
             ),
@@ -35,10 +35,7 @@ class HomeScreen extends StatelessWidget {
     final auth = Authentication();
     auth.image(
         image: const Image(image: AssetImage('assets/images/mobiplus_logo.png')));
+    auth.afterLogin(UserLogged());
     await auth.initAuthentication(context);
-  }
-
-  void getUserInfo(){
-    final teste = Authentication().getUserLoggedinfo();
   }
 }

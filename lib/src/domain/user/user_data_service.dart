@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:mobiplus_authentication_flutter/src/domain/user/user.data.dart';
 
@@ -14,11 +15,7 @@ class UserService{
       profileImageUrl: user.photoUrl);
   }
 
-  getUserLoggedInfo(){
-    if (_userLogged.email != null){
-      return _userLogged;
-    } else{
-      log('Undefined user');
-    }
+  User getUserLoggedInfo(){
+    return FirebaseAuth.instance.currentUser!;
   }
 }

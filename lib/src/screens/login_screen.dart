@@ -38,7 +38,7 @@ class LoginScreenStates extends State<LoginScreen> {
                 const Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
-                      'Olá, \nSeja bem-vindo novamente',
+                      'Olá, \nSeja bem-vindo',
                       style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
@@ -81,7 +81,7 @@ class LoginScreenStates extends State<LoginScreen> {
                 ),
                 RichText(
                     text:
-                        const TextSpan(text: 'Já possui uma conta?', children: [
+                        const TextSpan(text: 'Já possui uma conta? ', children: [
                   TextSpan(
                       text: 'Log in',
                       style: TextStyle(decoration: TextDecoration.underline))
