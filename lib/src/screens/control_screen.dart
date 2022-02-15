@@ -18,9 +18,9 @@ class ControlScreen extends StatelessWidget {
         body: StreamBuilder(
             stream: FirebaseAuth.instance.authStateChanges(),
             builder: (context, snapshot) {
-              // if (snapshot.connectionState == ConnectionState.waiting) {
-              //   return Center(child: CircularProgressIndicator());
-              // } else 
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return Center(child: CircularProgressIndicator());
+              } else 
               if (snapshot.hasData){
                 return afterLogin;
               }
@@ -30,6 +30,7 @@ class ControlScreen extends StatelessWidget {
                 return HomeScreen(
                     image, buttonText, buttonTextStyle, buttonStyle);
               }
-            }),
+            }
+        )
       );
 }

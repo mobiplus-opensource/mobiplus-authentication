@@ -4,18 +4,26 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:mobiplus_authentication_flutter/src/domain/user/user.data.dart';
 
-class UserService{
-  UserData _userLogged = UserData();
+class UserService {
+  static final UserService _instance = UserService._internal();
 
-  save(GoogleSignInAccount user, AuthProvider google){
-    _userLogged = UserData(
-      authProvider: google, 
-      email: user.email, 
-      fullName: user.displayName, 
-      profileImageUrl: user.photoUrl);
+  factory UserService() {
+    return _instance;
   }
 
-  User getUserLoggedInfo(){
+  UserService._internal();
+
+  UserData _userLogged = UserData();
+
+  save(GoogleSignInAccount user, AuthProvider google) {
+    _userLogged = UserData(
+        authProvider: google,
+        email: user.email,
+        fullName: user.displayName,
+        profileImageUrl: user.photoUrl);
+  }
+
+  User getUserLoggedInfo() {
     return FirebaseAuth.instance.currentUser!;
   }
 }

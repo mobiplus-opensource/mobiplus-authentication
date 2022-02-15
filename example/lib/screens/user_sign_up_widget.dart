@@ -15,10 +15,11 @@ class UserSignUpWidget extends StatelessWidget {
         centerTitle: true,
         actions: [
           TextButton(
-              onPressed: () {
-                auth.signOut(context);
-              },
-              child: const Text('logout'))
+            child: const Text('logout'),
+            onPressed: () {
+              auth.signOut();
+            },
+          )
         ],
       ),
       body: Container(
@@ -27,10 +28,6 @@ class UserSignUpWidget extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              'Profile 1',
-              style: TextStyle(fontSize: 24),
-            ),
             const SizedBox(
               height: 32,
             ),

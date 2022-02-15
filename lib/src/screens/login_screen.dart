@@ -80,12 +80,14 @@ class LoginScreenStates extends State<LoginScreen> {
                   ],
                 ),
                 RichText(
-                    text:
-                        const TextSpan(text: 'Já possui uma conta? ', children: [
-                  TextSpan(
-                      text: 'Log in',
-                      style: TextStyle(decoration: TextDecoration.underline))
-                ])),
+                    text: const TextSpan(
+                        text: 'Já possui uma conta? ',
+                        children: [
+                      TextSpan(
+                          text: 'Log in',
+                          style:
+                              TextStyle(decoration: TextDecoration.underline))
+                    ])),
               ],
             ),
           );

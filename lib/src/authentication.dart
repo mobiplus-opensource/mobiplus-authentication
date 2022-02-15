@@ -6,8 +6,9 @@ import 'package:mobiplus_authentication_flutter/src/screens/control_screen.dart'
 import 'package:provider/provider.dart';
 
 class Authentication {
-  static late final BuildContext _context;
-  static late final UserService _userService;
+  static late BuildContext _context;
+  static late UserService _userService;
+  static late GoogleSignInProvider _provider;
 
   late Image _image = Image(
     image: AssetImage('lib/src/assets/images/mobiplus_logo.png'),
@@ -51,6 +52,8 @@ class Authentication {
 
   initAuthentication(BuildContext buildContext) async {
     _context = buildContext;
+    _userService = UserService();
+
     await _launchAuthenticationScreen();
   }
 
@@ -58,9 +61,8 @@ class Authentication {
     return _userService.getUserLoggedInfo();
   }
 
-  signOut(BuildContext context) async {
-    final provider = Provider.of<GoogleSignInProvider>(context, listen: false);
-    provider.logOut();
+  signOut() async {
+
   }
 
   _launchAuthenticationScreen() async {
