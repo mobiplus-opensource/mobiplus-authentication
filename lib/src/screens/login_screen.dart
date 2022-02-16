@@ -1,15 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mobiplus_authentication_flutter/src/provider/google.sign.in.provider.dart';
 import 'package:provider/provider.dart';
 
 class LoginScreen extends StatefulWidget {
   final Image image;
+  final String middleText;
+  final TextStyle middleTextStyle;
+  final String minorMiddleText;
+  final TextStyle minorMiddleTextStyle;
   final String buttonText;
   final TextStyle buttonTextStyle;
   final ButtonStyle buttonStyle;
+  final BorderRadius imageRadiusCircle;
+  final Color backgroundColor;
 
   const LoginScreen(
-      this.image, this.buttonText, this.buttonTextStyle, this.buttonStyle,
+      this.image,
+      this.buttonText,
+      this.buttonTextStyle,
+      this.buttonStyle,
+      this.middleText,
+      this.middleTextStyle,
+      this.minorMiddleText,
+      this.minorMiddleTextStyle,
+      this.imageRadiusCircle,
+      this.backgroundColor,
       {Key? key})
       : super(key: key);
 
@@ -33,23 +49,22 @@ class LoginScreenStates extends State<LoginScreen> {
                 Container(
                     padding: const EdgeInsets.only(top: 20),
                     alignment: Alignment.center,
-                    child: widget.image),
+                    child: ClipRRect(
+                        child: widget.image,
+                        borderRadius: widget.imageRadiusCircle)),
                 const Spacer(),
-                const Align(
+                Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
-                      'Olá, \nSeja bem-vindo',
-                      style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
+                      widget.middleText,
+                      style: widget.middleTextStyle,
                     )),
                 const SizedBox(height: 8),
-                const Align(
+                Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
-                      'Faça login em sua\nconta para continuar ',
-                      style: TextStyle(fontSize: 16, color: Colors.white),
+                      widget.minorMiddleText,
+                      style: widget.minorMiddleTextStyle,
                     )),
                 const Spacer(),
                 const SizedBox(
@@ -60,34 +75,36 @@ class LoginScreenStates extends State<LoginScreen> {
                     Container(
                       width: constraints.maxWidth - 120,
                       padding: const EdgeInsets.only(bottom: 10),
-                      child: ElevatedButtonTheme(
-                        data:
-                            ElevatedButtonThemeData(style: widget.buttonStyle),
-                        child: ElevatedButton(
-                          onPressed: () async {
-                            final provider = Provider.of<GoogleSignInProvider>(
-                                context,
-                                listen: false);
-                            provider.googleLogin(context);
-                          },
-                          child: Text(
-                            widget.buttonText,
-                            style: widget.buttonTextStyle,
-                          ),
+                      child: ElevatedButton.icon(
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.white,
+                          onPrimary: Colors.black,
+                          minimumSize: Size(double.infinity, 50)
+                        ),
+                        onPressed: () async {
+                          final provider = Provider.of<GoogleSignInProvider>(
+                              context,
+                              listen: false);
+                          provider.googleLogin(context);
+                        },
+                        icon: FaIcon(FontAwesomeIcons.google, color: Colors.red),
+                        label: Text(
+                          widget.buttonText,
+                          style: widget.buttonTextStyle,
                         ),
                       ),
                     ),
                   ],
                 ),
-                RichText(
-                    text: const TextSpan(
-                        text: 'Já possui uma conta? ',
-                        children: [
-                      TextSpan(
-                          text: 'Log in',
-                          style:
-                              TextStyle(decoration: TextDecoration.underline))
-                    ])),
+                // RichText(
+                //     text: const TextSpan(
+                //         text: 'Já possui uma conta? ',
+                //         children: [
+                //       TextSpan(
+                //           text: 'Log in',
+                //           style:
+                //               TextStyle(decoration: TextDecoration.underline))
+                //     ])),
               ],
             ),
           );
