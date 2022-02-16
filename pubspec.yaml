@@ -16,6 +16,7 @@ dependencies:
     sdk: flutter
   provider: ^5.0.0
   motion_toast: ^2.1.0
+  font_awesome_flutter: ^9.2.0
 
 dev_dependencies:
   flutter_test:
