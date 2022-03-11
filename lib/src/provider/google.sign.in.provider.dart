@@ -21,8 +21,7 @@ class GoogleSignInProvider extends ChangeNotifier {
         return;
       }
 
-      final GoogleSignInAuthentication? googleAuth =
-          await _user.authentication;
+      final GoogleSignInAuthentication? googleAuth = await _user.authentication;
 
       final credential = GoogleAuthProvider.credential(
         accessToken: googleAuth?.accessToken,
@@ -36,9 +35,9 @@ class GoogleSignInProvider extends ChangeNotifier {
       userService.save(_user, AuthProvider.google);
 
       MotionToast.success(
-              title: Text(
+              title: const Text(
                 'Login realizado com sucesso',
-                style: const TextStyle(fontWeight: FontWeight.bold),
+                style: TextStyle(fontWeight: FontWeight.bold),
               ),
               layoutOrientation: ORIENTATION.rtl,
               animationType: ANIMATION.fromRight,
@@ -59,7 +58,7 @@ class GoogleSignInProvider extends ChangeNotifier {
     }
   }
 
-  Future logOut() async{
+  Future logOut() async {
     await googleSignIn.disconnect();
     FirebaseAuth.instance.signOut();
   }

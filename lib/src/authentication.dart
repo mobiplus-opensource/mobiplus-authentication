@@ -9,16 +9,16 @@ class Authentication {
 
   late Color _backgroundColor = Colors.blueGrey[800]!;
 
-  late Image _image = Image(
+  late Image _image = const Image(
     image: AssetImage('lib/src/assets/images/mobiplus_logo.png'),
   );
   late String _middleText = 'Olá, \nSeja bem-vindo';
-  late TextStyle _middleTextStyle =
-      TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white);
+  late TextStyle _middleTextStyle = const TextStyle(
+      fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white);
   late String _minorMiddleText = 'Faça login em sua conta para continuar';
   late TextStyle _minorMiddleTextStyle =
-      TextStyle(fontSize: 16, color: Colors.white);
-  late BorderRadius _imageRadiusCircle = BorderRadius.circular(300.0);
+      const TextStyle(fontSize: 16, color: Colors.white);
+  late final BorderRadius _imageRadiusCircle = BorderRadius.circular(300.0);
 
   late String _buttonText = 'Continuar com Google';
   late TextStyle _buttonTextStyle = const TextStyle(fontSize: 20);

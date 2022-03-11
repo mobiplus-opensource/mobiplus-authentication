@@ -77,17 +77,17 @@ class LoginScreenStates extends State<LoginScreen> {
                       padding: const EdgeInsets.only(bottom: 10),
                       child: ElevatedButton.icon(
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.white,
-                          onPrimary: Colors.black,
-                          minimumSize: Size(double.infinity, 50)
-                        ),
+                            primary: Colors.white,
+                            onPrimary: Colors.black,
+                            minimumSize: const Size(double.infinity, 50)),
                         onPressed: () async {
                           final provider = Provider.of<GoogleSignInProvider>(
                               context,
                               listen: false);
                           provider.googleLogin(context);
                         },
-                        icon: FaIcon(FontAwesomeIcons.google, color: Colors.red),
+                        icon: const FaIcon(FontAwesomeIcons.google,
+                            color: Colors.red),
                         label: Text(
                           widget.buttonText,
                           style: widget.buttonTextStyle,
@@ -96,15 +96,6 @@ class LoginScreenStates extends State<LoginScreen> {
                     ),
                   ],
                 ),
-                // RichText(
-                //     text: const TextSpan(
-                //         text: 'Já possui uma conta? ',
-                //         children: [
-                //       TextSpan(
-                //           text: 'Log in',
-                //           style:
-                //               TextStyle(decoration: TextDecoration.underline))
-                //     ])),
               ],
             ),
           );

@@ -34,8 +34,9 @@ class HomeScreen extends StatelessWidget {
   Future<void> initAuthentication(BuildContext context) async {
     final auth = Authentication();
     auth.image(
-        image: const Image(image: AssetImage('assets/images/mobiplus_logo.png')));
-    auth.afterLogin(UserLogged());
+        image:
+            const Image(image: AssetImage('assets/images/mobiplus_logo.png')));
+    auth.afterLogin(const UserLogged());
     await auth.initAuthentication(context);
   }
 }
