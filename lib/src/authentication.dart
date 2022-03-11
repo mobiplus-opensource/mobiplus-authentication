@@ -27,66 +27,39 @@ class Authentication {
 
   late Widget _afterlogin;
 
-  void afterLogin(Widget userLogged) {
-    _afterlogin = userLogged;
-  }
+  void afterLogin(Widget userLogged) => _afterlogin = userLogged;
 
   void backGroundColor({Color? backgroundColor}) {
-    if (backgroundColor != null) {
-      _backgroundColor = backgroundColor;
-    }
+    if (backgroundColor != null) _backgroundColor = backgroundColor;
   }
 
   void image({Image? image}) {
-    if (image != null) {
-      _image = image;
-    }
+    if (image != null) _image = image;
   }
 
   void middleText(String? middleText, TextStyle? middleTextStyle) {
-    if (middleText != null) {
-      _middleText = middleText;
-    }
-
-    if (middleTextStyle != null) {
-      _middleTextStyle = middleTextStyle;
-    }
+    if (middleText != null) _middleText = middleText;
+    if (middleTextStyle != null) _middleTextStyle = middleTextStyle;
   }
 
   void minorMiddleText(String? minorMiddleText, TextStyle? minorMiddleTextStyle) {
-    if (minorMiddleText != null) {
-      _minorMiddleText = minorMiddleText;
-    }
-
-    if (minorMiddleTextStyle != null) {
-      _minorMiddleTextStyle = minorMiddleTextStyle;
-    }
+    if (minorMiddleText != null) _minorMiddleText = minorMiddleText;
+    if (minorMiddleTextStyle != null) _minorMiddleTextStyle = minorMiddleTextStyle;
   }
 
   void button({String? buttonText, TextStyle? buttonTextStyle, ButtonStyle? buttonStyle}) {
-    if (buttonText != null) {
-      _buttonText = buttonText;
-    }
-
-    if (buttonTextStyle != null) {
-      _buttonTextStyle = buttonTextStyle;
-    }
-
-    if (buttonStyle != null) {
-      _buttonStyle = buttonStyle;
-    }
+    if (buttonText != null) _buttonText = buttonText;
+    if (buttonTextStyle != null) _buttonTextStyle = buttonTextStyle;
+    if (buttonStyle != null) _buttonStyle = buttonStyle;
   }
 
   initAuthentication(BuildContext buildContext) async {
     _context = buildContext;
     _userService = UserService();
-
     await _launchAuthenticationScreen();
   }
 
-  User getUserLoggedinfo() {
-    return _userService.getUserLoggedInfo();
-  }
+  User getUserLoggedinfo() => _userService.getUserLoggedInfo();
 
   signOut() async {}
 
