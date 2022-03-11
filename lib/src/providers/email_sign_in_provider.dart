@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:mobiplus_authentication_flutter/src/domain/user/user.data.dart';
-import 'package:mobiplus_authentication_flutter/src/domain/user/user_data_service.dart';
+import 'package:mobiplus_authentication_flutter/src/entities/user_data.dart';
+import 'package:mobiplus_authentication_flutter/src/services/user_data_service.dart';
 import 'package:motion_toast/motion_toast.dart';
 import 'package:motion_toast/resources/arrays.dart';
 
@@ -24,8 +24,8 @@ class EmailSignInProvider extends ChangeNotifier {
       );
 
       await FirebaseAuth.instance.signInWithCredential(credential);
-      final userService = UserService();
-      userService.save(_user, AuthProvider.email);
+      final userDataService = UserDataService();
+      userDataService.save(_user, AuthProvider.email);
 
       MotionToast.success(
         title: const Text('Login realizado com sucesso', style: TextStyle(fontWeight: FontWeight.bold)),

@@ -1,33 +1,43 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:mobiplus_authentication_flutter/src/domain/user/user_data_service.dart';
 import 'package:mobiplus_authentication_flutter/src/screens/control_screen.dart';
+import 'package:mobiplus_authentication_flutter/src/services/user_data_service.dart';
 
 class Authentication {
   static late BuildContext _context;
-  static late UserService _userService;
+  static late UserDataService _userService;
 
   late Color _backgroundColor = Colors.blueGrey[800]!;
-
   late Image _image = const Image(image: AssetImage('lib/src/assets/images/mobiplus_logo.png'));
+
   late String _middleText = 'Olá, \nSeja bem-vindo';
-  late TextStyle _middleTextStyle = const TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white);
   late String _minorMiddleText = 'Faça login em sua conta para continuar';
-  late TextStyle _minorMiddleTextStyle = const TextStyle(fontSize: 16, color: Colors.white);
-  late final BorderRadius _imageRadiusCircle = BorderRadius.circular(300.0);
+
+  late TextStyle _minorMiddleTextStyle = const TextStyle(
+    fontSize: 16,
+    color: Colors.white,
+  );
+  late TextStyle _middleTextStyle = const TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.bold,
+    color: Colors.white,
+  );
 
   late String _buttonText = 'Continuar com Google';
+
   late TextStyle _buttonTextStyle = const TextStyle(fontSize: 20);
   late ButtonStyle _buttonStyle = ButtonStyle(
+    backgroundColor: MaterialStateProperty.all<Color>(const Color(0xffFF5D00)),
     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
       RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
     ),
-    backgroundColor: MaterialStateProperty.all<Color>(const Color(0xffFF5D00)),
   );
 
-  late Widget _afterlogin;
+  late final BorderRadius _imageRadiusCircle = BorderRadius.circular(300.0);
 
-  void afterLogin(Widget userLogged) => _afterlogin = userLogged;
+  Widget? _afterlogin;
+
+  void afterLogin(Widget screen) => _afterlogin = screen;
 
   void backGroundColor({Color? backgroundColor}) {
     if (backgroundColor != null) _backgroundColor = backgroundColor;
@@ -55,7 +65,7 @@ class Authentication {
 
   initAuthentication(BuildContext buildContext) async {
     _context = buildContext;
-    _userService = UserService();
+    _userService = UserDataService();
     await _launchAuthenticationScreen();
   }
 
@@ -64,6 +74,8 @@ class Authentication {
   signOut() async {}
 
   _launchAuthenticationScreen() async {
+    if (_afterlogin == null) return;
+
     await Navigator.push(
       _context,
       MaterialPageRoute(
@@ -72,7 +84,7 @@ class Authentication {
           buttonText: _buttonText,
           buttonTextStyle: _buttonTextStyle,
           buttonStyle: _buttonStyle,
-          afterLogin: _afterlogin,
+          afterLogin: _afterlogin!,
           middleText: _middleText,
           midleTextStyle: _middleTextStyle,
           minorMiddleText: _minorMiddleText,

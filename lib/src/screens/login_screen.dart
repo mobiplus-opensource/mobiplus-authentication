@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:mobiplus_authentication_flutter/src/provider/google_sign_in_provider.dart';
+import 'package:mobiplus_authentication_flutter/src/providers/google_sign_in_provider.dart';
 import 'package:provider/provider.dart';
 
 class LoginScreen extends StatefulWidget {

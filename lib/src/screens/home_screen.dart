@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobiplus_authentication_flutter/src/provider/google_sign_in_provider.dart';
+import 'package:mobiplus_authentication_flutter/src/providers/google_sign_in_provider.dart';
 import 'package:mobiplus_authentication_flutter/src/screens/login_screen.dart';
 
 import 'package:provider/provider.dart';

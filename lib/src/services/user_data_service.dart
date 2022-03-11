@@ -1,12 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:mobiplus_authentication_flutter/src/domain/user/user.data.dart';
+import 'package:mobiplus_authentication_flutter/src/entities/user_data.dart';
 
-class UserService {
-  factory UserService() => _instance;
-  UserService._internal();
+class UserDataService {
+  factory UserDataService() => _instance;
+  UserDataService._internal();
 
-  static final UserService _instance = UserService._internal();
+  static final UserDataService _instance = UserDataService._internal();
   UserData _userLogged = UserData();
 
   void save(GoogleSignInAccount user, AuthProvider google) => _userLogged = UserData(
