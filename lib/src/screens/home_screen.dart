@@ -36,16 +36,17 @@ class HomeScreen extends StatelessWidget {
       create: (BuildContext context) => GoogleSignInProvider(),
       child: Builder(builder: (context) {
         return LoginScreen(
-            image,
-            buttonText,
-            buttonTextStyle,
-            buttonStyle,
-            middleText,
-            midleTextStyle,
-            minorMiddleText,
-            minormidleTextStyle,
-            imageRadiusCircle,
-            backgroundColor);
+          image: image,
+          buttonText: buttonText,
+          buttonTextStyle: buttonTextStyle,
+          buttonStyle: buttonStyle,
+          middleText: middleText,
+          middleTextStyle: midleTextStyle,
+          minorMiddleText: minorMiddleText,
+          minorMiddleTextStyle: minormidleTextStyle,
+          imageRadiusCircle: imageRadiusCircle,
+          backgroundColor: backgroundColor,
+        );
       }),
     );
   }

@@ -9,24 +9,21 @@ class Authentication {
 
   late Color _backgroundColor = Colors.blueGrey[800]!;
 
-  late Image _image = const Image(
-    image: AssetImage('lib/src/assets/images/mobiplus_logo.png'),
-  );
+  late Image _image = const Image(image: AssetImage('lib/src/assets/images/mobiplus_logo.png'));
   late String _middleText = 'Olá, \nSeja bem-vindo';
-  late TextStyle _middleTextStyle = const TextStyle(
-      fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white);
+  late TextStyle _middleTextStyle = const TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white);
   late String _minorMiddleText = 'Faça login em sua conta para continuar';
-  late TextStyle _minorMiddleTextStyle =
-      const TextStyle(fontSize: 16, color: Colors.white);
+  late TextStyle _minorMiddleTextStyle = const TextStyle(fontSize: 16, color: Colors.white);
   late final BorderRadius _imageRadiusCircle = BorderRadius.circular(300.0);
 
   late String _buttonText = 'Continuar com Google';
   late TextStyle _buttonTextStyle = const TextStyle(fontSize: 20);
   late ButtonStyle _buttonStyle = ButtonStyle(
-      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0))),
-      backgroundColor:
-          MaterialStateProperty.all<Color>(const Color(0xffFF5D00)));
+    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+      RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
+    ),
+    backgroundColor: MaterialStateProperty.all<Color>(const Color(0xffFF5D00)),
+  );
 
   late Widget _afterlogin;
 
@@ -56,8 +53,7 @@ class Authentication {
     }
   }
 
-  void minorMiddleText(
-      String? minorMiddleText, TextStyle? minorMiddleTextStyle) {
+  void minorMiddleText(String? minorMiddleText, TextStyle? minorMiddleTextStyle) {
     if (minorMiddleText != null) {
       _minorMiddleText = minorMiddleText;
     }
@@ -67,10 +63,7 @@ class Authentication {
     }
   }
 
-  void button(
-      {String? buttonText,
-      TextStyle? buttonTextStyle,
-      ButtonStyle? buttonStyle}) {
+  void button({String? buttonText, TextStyle? buttonTextStyle, ButtonStyle? buttonStyle}) {
     if (buttonText != null) {
       _buttonText = buttonText;
     }
