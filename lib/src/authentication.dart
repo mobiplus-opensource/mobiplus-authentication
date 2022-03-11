@@ -99,20 +99,22 @@ class Authentication {
 
   _launchAuthenticationScreen() async {
     await Navigator.push(
-        _context,
-        MaterialPageRoute(
-            builder: (_context) => ControlScreen(
-                  _image,
-                  _buttonText,
-                  _buttonTextStyle,
-                  _buttonStyle,
-                  _afterlogin,
-                  _middleText,
-                  _middleTextStyle,
-                  _minorMiddleText,
-                  _minorMiddleTextStyle,
-                  _imageRadiusCircle,
-                  _backgroundColor,
-                )));
+      _context,
+      MaterialPageRoute(
+        builder: (_context) => ControlScreen(
+          image: _image,
+          buttonText: _buttonText,
+          buttonTextStyle: _buttonTextStyle,
+          buttonStyle: _buttonStyle,
+          afterLogin: _afterlogin,
+          middleText: _middleText,
+          midleTextStyle: _middleTextStyle,
+          minorMiddleText: _minorMiddleText,
+          minormidleTextStyle: _minorMiddleTextStyle,
+          imageRadiusCircle: _imageRadiusCircle,
+          backgroundColor: _backgroundColor,
+        ),
+      ),
+    );
   }
 }

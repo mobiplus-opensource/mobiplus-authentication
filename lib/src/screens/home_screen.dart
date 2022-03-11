@@ -5,6 +5,20 @@ import 'package:mobiplus_authentication_flutter/src/screens/login_screen.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({
+    Key? key,
+    required this.image,
+    required this.buttonText,
+    required this.buttonTextStyle,
+    required this.buttonStyle,
+    required this.middleText,
+    required this.midleTextStyle,
+    required this.minorMiddleText,
+    required this.minormidleTextStyle,
+    required this.imageRadiusCircle,
+    required this.backgroundColor,
+  }) : super(key: key);
+
   final Image image;
   final String middleText;
   final TextStyle midleTextStyle;
@@ -16,16 +30,22 @@ class HomeScreen extends StatelessWidget {
   final BorderRadius imageRadiusCircle;
   final Color backgroundColor;
 
-  const HomeScreen(
-      this.image, this.buttonText, this.buttonTextStyle, this.buttonStyle, this.middleText, this.midleTextStyle, this.minorMiddleText, this.minormidleTextStyle, this.imageRadiusCircle, this.backgroundColor)
-      : super();
-
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (BuildContext context) => GoogleSignInProvider(),
       child: Builder(builder: (context) {
-        return LoginScreen(image, buttonText, buttonTextStyle, buttonStyle, middleText, midleTextStyle, minorMiddleText, minormidleTextStyle, imageRadiusCircle, backgroundColor);
+        return LoginScreen(
+            image,
+            buttonText,
+            buttonTextStyle,
+            buttonStyle,
+            middleText,
+            midleTextStyle,
+            minorMiddleText,
+            minormidleTextStyle,
+            imageRadiusCircle,
+            backgroundColor);
       }),
     );
   }
