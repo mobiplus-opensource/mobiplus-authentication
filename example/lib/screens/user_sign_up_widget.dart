@@ -42,8 +42,7 @@ class UserSignUpWidget extends StatelessWidget {
               'Nome: ' + user.displayName!,
               style: const TextStyle(color: Colors.white, fontSize: 16),
             ),
-            Text('Email' + user.email!,
-                style: const TextStyle(color: Colors.white, fontSize: 16))
+            Text('Email' + user.email!, style: const TextStyle(color: Colors.white, fontSize: 16))
           ],
         ),
       ),
